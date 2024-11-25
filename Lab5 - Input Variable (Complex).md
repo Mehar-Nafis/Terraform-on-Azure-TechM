@@ -11,7 +11,7 @@ vi variables.tf
 Press i to enter insert mode and add the following content
 ```hcl
 variable "resource_groups" {
-  type = map(map(string))
+  # type = map(map(string))
   default = {
     rg1 = {
       name     = "tf-rg-us-east"
@@ -46,10 +46,8 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "multi_rg" {
-  for_each = var.resource_groups
-
-  name     = each.value["name"]
-  location = each.value["location"]
+  name     = var.resource_groups["rg1"]["name"]
+  location = var.resource_groups["rg1"]["location"]
 }
 ```
 Initialize the Terraform working directory:
