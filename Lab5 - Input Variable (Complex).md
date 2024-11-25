@@ -1,20 +1,15 @@
 ##  Input Variable (Complex) - Map Variables
 
-
-Create a directory and navigate to it:
-
-bash
-Copy code
+Create a directory and navigate to it
+```
 cd ~/Labs && mkdir rg-map-lab && cd rg-map-lab
-Create the variables file (variables.tf):
-
-bash
-Copy code
+```
+Create the variables file (variables.tf)
+```
 vi variables.tf
-Press i to enter insert mode and add the following content:
-
-hcl
-Copy code
+```
+Press i to enter insert mode and add the following content
+```hcl
 variable "resource_groups" {
   type = map(map(string))
   default = {
@@ -37,15 +32,13 @@ variable "subscription_id" {
   type    = string
   default = "b70f2b66-b08e-4775-8273-89d81847a0c2" # Update with your subscription ID
 }
-Create the main configuration file (main.tf):
-
-bash
-Copy code
+```
+Create the main configuration file (main.tf)
+```
 vi main.tf
-Add the following content:
-
-hcl
-Copy code
+```
+Add the following content
+```hcl
 provider "azurerm" {
   features {}
   resource_provider_registrations = "none"
@@ -58,38 +51,28 @@ resource "azurerm_resource_group" "multi_rg" {
   name     = each.value["name"]
   location = each.value["location"]
 }
+```
 Initialize the Terraform working directory:
-
-bash
-Copy code
+```
 terraform init
+```
 Plan the execution:
-
-bash
-Copy code
+```
 terraform plan
+```
 Apply the changes to create the resource groups:
-
-bash
-Copy code
-terraform apply
-Verify the resource groups in Azure:
-
-bash
-Copy code
+```
+terraform apply -auto-approve
+```
+Verify the resource groups in Azure
+```
 az group list -o table
+```
 Clean up resources to avoid charges:
-
-bash
-Copy code
+```
 terraform destroy
+```
 Navigate back and delete the folder:
-
-bash
-Copy code
+```
 cd ~/Labs && rm -rf rg-map-lab
-Explanation
-Map Variables: The resource_groups variable is a map of maps, where each key (rg1, rg2, rg3) represents a resource group with attributes like name and location.
-Dynamic Resource Creation: The for_each argument dynamically creates one resource group for each entry in the map.
-Flexible Regions: You can easily add or modify regions in the variables.tf file without changing the main configuration.
-
+```
