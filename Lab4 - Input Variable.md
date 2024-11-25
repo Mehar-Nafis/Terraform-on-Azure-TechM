@@ -69,7 +69,7 @@ Plan
 ```
 terraform plan
 ```
-Notice the values from the default are automatically being piked up
+Notice the values from the default are automatically being picked up
 ![image](https://github.com/user-attachments/assets/2aa1c799-1774-4cb9-a50a-bcef6fb4b68c)
 
 ### Step 4:  Using environment variables
