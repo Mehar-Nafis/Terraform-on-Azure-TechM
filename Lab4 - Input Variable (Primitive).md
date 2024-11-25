@@ -1,6 +1,5 @@
-##  Input Variables
+##  Input Variables - Primitive Variables
 
-### Task 1: Primitive Variables
 #### Step 1: Create the configuration files
 Create and Navigate to the Working Directory
 ```bash
