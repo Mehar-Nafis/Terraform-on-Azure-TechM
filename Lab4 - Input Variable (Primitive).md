@@ -1,6 +1,6 @@
 ##  Input Variables - Primitive Variables
 
-#### Step 1: Create the configuration files
+### Step 1: Create the configuration files
 Create and Navigate to the Working Directory
 ```bash
 cd ~/Labs && mkdir primitive_var_lab && cd primitive_var_lab
@@ -48,13 +48,13 @@ Initialize
 ```
 terraform init
 ```
-#### Step 2: Plan the configuration file without passing any values
+### Step 2: Plan the configuration file without passing any values
 ```
 terraform plan
 ```
 ![image](https://github.com/user-attachments/assets/f8050872-aa3c-44f7-a336-617f82cb7e8e)
 
-#### Step 3:  Plan using the default values
+### Step 3:  Plan using the default values
 Now go and uncomment all the defaults in the vars.tf
 ```
 vi vars.tf
@@ -99,7 +99,7 @@ terraform plan
 ```
 ![image](https://github.com/user-attachments/assets/1ea4cce5-a47b-4c2c-b564-76ea947d7a15)
 
-#### Step 6:  Plan by passing the values of the variables from the command line
+### Step 6:  Plan by passing the values of the variables from the command line
 Plan the configuration with custom variable values from the command line
 ```
 terraform plan -var "rg-name=var-resource-group-2" -var "location=West US"
