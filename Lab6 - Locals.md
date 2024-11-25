@@ -46,6 +46,15 @@ resource "azurerm_resource_group" "RG" {
   location = var.location
   tags     = local.custom_tags
 }
+
+resource "azurerm_storage_account" "example" {
+  name                     = "tfexamplestoracc"  # Must be globally unique
+  resource_group_name      = var.rg-name
+  location                 = var.location
+  account_tier             = "Standard"          
+  account_replication_type = "LRS"
+  tags                     = local.custom_tags            
+}
 ```
 Initialize Terraform
 ```
