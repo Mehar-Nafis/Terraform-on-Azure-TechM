@@ -58,7 +58,7 @@ Clean Up:
 terraform destroy -auto-approve
 ```
 ```
-cd ~/Labs && rm -rf ccount-lab
+cd ~/Labs && rm -rf count-lab
 ```
 
 
