@@ -12,6 +12,7 @@ vi main.tf
 Press INSERT to start editing the file, and add the following content:
 ```
 # main.tf
+# main.tf
 provider "azurerm" {
   features {}
   resource_provider_registrations = "none"
@@ -20,15 +21,15 @@ provider "azurerm" {
 
 module "resource_group" {
   source = "./modules/resource_group"
-  rg_name = "rg-tf-modules-lab"
+  rg_name = var.rg_name
   location = "East US"
 }
 
 module "storage_account" {
-  source              = "./modules/storage_account"
-  rg_name             = module.resource_group.name
-  storage_account_name = "sttfmoduleslab"
-  location            = module.resource_group.location
+  source               = "./modules/storage_account"
+  rg_name              = module.resource_group.name
+  storage_account_name = var.storage_account_name
+  location             = module.resource_group.location
 }
 ```
 Save the file by pressing ESC and typing :wq! to write the file and quit.
@@ -44,7 +45,7 @@ Press INSERT to start editing, and add the following content:
 variable "rg_name" {
   description = "Name of the Resource Group"
   type        = string
-  default     = "rg-tf-modules-lab"
+  default     = "meharmoduleslab-rg"
 }
 
 variable "location" {
@@ -56,7 +57,7 @@ variable "location" {
 variable "storage_account_name" {
   description = "Name of the Storage Account"
   type        = string
-  default     = "sttfmoduleslab"
+  default     = "meharmoduleslabstorage"
 }
 ```
 Create the outputs file
