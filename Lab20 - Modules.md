@@ -196,6 +196,7 @@ output "name" {
 Save the file by pressing ESC and typing: wq! to write the file and quit.
 
 Your directory structure should look like below.
+
 ![image](https://github.com/user-attachments/assets/3de9c956-868b-4e46-b126-cbf200c5408c)
 
 Run the following command to initialize.
