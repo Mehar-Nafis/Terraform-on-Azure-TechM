@@ -45,7 +45,7 @@ After the apply command finishes, check the current directory for the creation_l
 ### Task 2: Using the remote-exec Provisioner
 Create a directory for the lab
 ```bash
-cd ~/provisioner-lab && mkdir Task2 && cd Task2
+cd ~/Labs/provisioner-lab && mkdir Task2 && cd Task2
 ```
 Create a new file main.tf
 ```
