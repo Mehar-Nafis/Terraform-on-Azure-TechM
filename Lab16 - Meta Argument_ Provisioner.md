@@ -213,7 +213,7 @@ terraform destroy -auto-approve
 
 Create a directory for the lab:
 ```
-cd ~/provisioner-lab && mkdir Task3 && cd Task3
+cd ~/Labs/provisioner-lab && mkdir Task3 && cd Task3
 ```
 Create a simple local file to upload
 ```
