@@ -2,7 +2,7 @@
 
 Create a new directory for the lab and navigate into it
 ```
-cd ~/Labs && mkdir terraform-azure-lab && cd terraform-azure-lab 
+cd ~/Labs && mkdir modules-lab && cd modules-lab 
 ```
 #### Write the Root Module.
 Create the main.tf file: This is the entry point for your Terraform configuration.
