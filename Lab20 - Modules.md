@@ -136,7 +136,7 @@ Save the file by pressing ESC and typing: wq! to write the file and quit.
 
 Module for Storage Account : Create a directory within modules
 ```
-cd .. && mkdir storage_account
+cd .. && mkdir storage_account && cd storage_account
 ```
 Create the main file
 ```
