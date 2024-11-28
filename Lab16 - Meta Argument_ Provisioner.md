@@ -20,10 +20,10 @@ provider "azurerm" {
 resource "azurerm_resource_group" "example" {
   name     = "example-resource-group"
   location = "East US"
-}
 
-provisioner "local-exec" {
-  command = "echo 'Resource group created successfully!' > creation_log.txt"
+  provisioner "local-exec" {
+    command = "echo 'Resource group created successfully!' > creation_log.txt"
+  }
 }
 ```
 Initialize the Terraform configuration
