@@ -1,5 +1,7 @@
 ## Terraform Modules
 
+### Custom Modules
+
 Create a new directory for the lab and navigate into it
 ```
 cd ~/Labs && mkdir modules-lab && cd modules-lab 
