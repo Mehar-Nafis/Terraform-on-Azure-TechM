@@ -87,3 +87,29 @@ terraform destroy -auto-approve
 ```
 cd ~/Labs && rm -rf nullresource-lab
 ```
+
+### Task 3 : Automating Remote Configuration on a Manually Launched VM Using Terraform
+A virtual machine (VM) was manually launched with SSH key-based authentication. The goal is to configure Terraform to execute the following inline command on the VM:
+ "echo 'Remote Exec Provisioner Test' >> /tmp/testfile.txt"
+
+```
+resource "null_resource" "trigger_example" {
+  triggers = {
+    time-stamp = timestamp() 
+  }
+
+  provisioner "remote-exec" {
+      inline = [
+        "echo 'Remote Exec Provisioner Test' >> /tmp/testfile.txt"
+      ]
+
+      connection {
+        type     = "ssh"
+        user     = "azureuser"
+        private_key = file("C:/Users/MeharNafis/Downloads/testing-Null-Resource_key.pem")
+        host     = "20.244.27.206"    
+    }
+  }
+}
+
+```
