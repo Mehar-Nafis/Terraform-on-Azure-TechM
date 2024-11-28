@@ -201,6 +201,9 @@ Your directory structure should look like below.
 
 Run the following command to initialize.
 ```
+cd ~/Labs/modules-lab
+```
+```
 terraform init 
 ```
 To see what resources Terraform will create, run:
