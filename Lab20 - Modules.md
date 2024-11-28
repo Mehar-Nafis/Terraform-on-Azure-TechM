@@ -212,7 +212,7 @@ terraform plan
 ```
 Run the following command to deploy the resources:
 ```
-terraform apply
+terraform apply -auto-approve
 ```
 Type yes to confirm the deployment.
 
