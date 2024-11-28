@@ -113,3 +113,22 @@ resource "null_resource" "trigger_example" {
 }
 
 ```
+![image](https://github.com/user-attachments/assets/c607db17-8ee2-4ba3-8ebb-1af78621271c)
+
+Now ssh in to the VM for cross certification.
+```
+ssh -i "C:\\Users\\MeharNafis\\Downloads\\testing-Null-Resource_key.pem" azureuser@20.244.27.206
+```
+```
+sudo cat /tmp/testfile.txt
+```
+![image](https://github.com/user-attachments/assets/67dd649c-33a0-44d5-bd74-2469aa86cb2e)
+```
+exit
+```
+Next time you apply the configuration another line gets appended as this configuration is triggered on timestamp.
+
+![image](https://github.com/user-attachments/assets/85b80484-e4e8-4ffd-80e1-26efaa63c606)
+
+
+
