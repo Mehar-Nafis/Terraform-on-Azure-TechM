@@ -4,22 +4,20 @@
 ```
 cd ~ && mkdir workspace-lab && cd workspace-lab
 ```
-Now Create File configuration file instance.tf.
+Now Create File configuration file main.tf.
 ```
-vi instance.tf
+vi main.tf
 ```
 ```
-provider "aws" {
-  region = "us-west-2"  # Change to your preferred region
+provider "azurerm" {
+  features {}
+  resource_provider_registrations = "none"
+  subscription_id = "b70f2b66-b08e-4775-8273-89d81847a0c2" ## Update subscription_id with yours
 }
 
-resource "aws_instance" "example" {
-  ami           = "ami-0c55b159cbfafe1f0"  # Replace with a valid AMI ID for your region
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "example-instance"
-  }
+resource "azurerm_resource_group" "RG" {
+  name     = "tf-resource-grp"
+  location = "East US"
 }
 ```
 Initialize Terraform in your working directory.
