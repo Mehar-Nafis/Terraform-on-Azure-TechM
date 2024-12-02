@@ -98,10 +98,10 @@ https://app.terraform.io/app
 ### Task 5: Add Azure Variables to Workspace:
 * Now on the terraform cloud graphics, Navigate to your workspace's "Variables" section.
 * Click on add variable and provide the following details(created in Task 2). Make sure you enable the sensitive check box. 
-   ARM_CLIENT_ID with the client_id value.
-   ARM_CLIENT_SECRET with the client_secret value (**mark as "sensitive"**).
-   ARM_TENANT_ID with the tenant_id value.
-   ARM_SUBSCRIPTION_ID with the subscription_id value.
+   * ARM_CLIENT_ID with the client_id value.
+   * ARM_CLIENT_SECRET with the client_secret value (**mark as "sensitive"**).
+   * ARM_TENANT_ID with the tenant_id value.
+   * ARM_SUBSCRIPTION_ID with the subscription_id value.
 
 
 ### Task 6: Plan and Apply the changes 
