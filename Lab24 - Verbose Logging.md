@@ -13,9 +13,15 @@ vi main.tf
 ```
 ```hcl
 
-resource "local_file" "example" {
-  filename = "${path.module}/hello.txt"
-  content  = "Hello, Terraform with verbose logging!"
+provider "azurerm" {
+  features {}
+  resource_provider_registrations = "none"
+  subscription_id = "b70f2b66-b08e-4775-8273-89d81847a0c2" ## Update subscription_id with yours
+}
+
+resource "azurerm_resource_group" "RG" {
+  name     = "tf-resource-grp"
+  location = "East US"
 }
 ```
 This configuration uses the local_file resource to create a file named hello.txt in the current directory with the specified content.
