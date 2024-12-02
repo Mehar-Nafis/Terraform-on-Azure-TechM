@@ -31,9 +31,15 @@ variable "tenant_id" {
 * Add another file by clicking on add file dropdown and select create new file. 
 * Name the file as rg.tf, Insert the below contents and commit the file. 
 ```
-resource "azurerm_resource_group" "RG" {
-  name     = "Azure_Tf_Resource-_Group"
-  location = "East US"
+provider "azurerm" {
+  features {}
+  resource_provider_registrations = "none"
+
+  # Connection to Azure
+  subscription_id = var.subscription_id
+  client_id = var.client_id
+  client_secret = var.client_secret
+  tenant_id = var.tenant_id
 }
 ```
 * Click on commit the new file.
