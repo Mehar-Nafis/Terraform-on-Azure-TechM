@@ -2,7 +2,7 @@
 
 ### Create the Configuration File
 ```
-cd ~ && mkdir workspace-lab && cd workspace-lab
+cd ~/Labs && mkdir workspace-lab && cd workspace-lab
 ```
 Now Create File configuration file main.tf.
 ```
