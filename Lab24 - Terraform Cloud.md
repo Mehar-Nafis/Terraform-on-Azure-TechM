@@ -58,7 +58,7 @@ provider "azurerm" {
   tenant_id = var.tenant_id
 }
 ```
-### Task 2:Authorizing Terraform Infrastructure to write over Azure
+### Task 2:Authorizing Terraform Cloud to write over Azure
 
 #### Create an Azure Active Directory App Registration:
 * Navigate to the Azure portal at https://portal.azure.com.
