@@ -31,15 +31,9 @@ variable "tenant_id" {
 * Add another file by clicking on add file dropdown and select create new file. 
 * Name the file as rg.tf, Insert the below contents and commit the file. 
 ```
-provider "azurerm" {
-  features {}
-  resource_provider_registrations = "none"
-
-  # Connection to Azure
-  subscription_id = var.subscription_id
-  client_id = var.client_id
-  client_secret = var.client_secret
-  tenant_id = var.tenant_id
+resource "azurerm_resource_group" "RG" {
+  name     = "Azure_Tf_Resource-_Group"
+  location = "East US"
 }
 ```
 * Click on commit the new file.
@@ -120,20 +114,4 @@ https://app.terraform.io/app
 
 
 
----------------------------------------------------------------------
-client_id
-b273a9c8-c3f3-4630-957a-db1489febeff
 
-tenant_id
-87ff5088-1a46-4ee5-b8a1-da3c81e3e368
-
-client_secret
-TYM8Q~dgEo4QGgNFGrjr8Zo-VYhlK6m5qY~EzcxS
-
-
-Secret ID
-55f733c7-6bc3-43c2-afb0-488100ed2059
-
-subscription_id
-607e05a3-6e68-4027-bef6-4184bd3922b9
---------------------------------------------------------------------------
