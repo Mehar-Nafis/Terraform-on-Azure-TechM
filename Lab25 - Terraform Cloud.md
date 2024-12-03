@@ -8,27 +8,6 @@
 * Click on Private
 * Click on Create Repository
 * Click on creating a new file
-* Name your file vars.tf
-* Add the following code
-```
-variable "client_id" {
-  type = string
-}
-
-variable "client_secret" {
-  type = string
-}
-
-variable "subscription_id" {
-  type = string
-}
-
-variable "tenant_id" {
-  type = string
-}
-```
-* Click on commit the new file.
-* Add another file by clicking on add file dropdown and select create new file. 
 * Name the file as rg.tf, Insert the below contents and commit the file. 
 ```
 resource "azurerm_resource_group" "RG" {
@@ -43,13 +22,7 @@ resource "azurerm_resource_group" "RG" {
  provider "azurerm" {
   features {}
 
-  skip_provider_registration = "true"
-
-  # Connection to Azure
-  subscription_id = var.subscription_id
-  client_id = var.client_id
-  client_secret = var.client_secret
-  tenant_id = var.tenant_id
+  resource_provider_registrations = "none"
 }
 ```
 ### Task 2:Authorizing Terraform Cloud to write over Azure
@@ -59,12 +32,14 @@ resource "azurerm_resource_group" "RG" {
 * Search for "Azure Active Directory" and select "App registrations".
 * Click "New registration".
 * Give the app a name, select "Accounts in this organizational directory only", and click "Register".
+  
 #### Obtain Client ID, Tenant ID, and Subscription ID:
 * After creating the app, navigate to "Overview".
 * Copy the "Application (client) ID" (this is the client_id).
 * Copy the "Directory (tenant) ID" (this is the tenant_id).
 * Search for "Subscriptions" in the Azure portal.
 * Select your subscription and copy the "Subscription ID".
+  
 #### Create a Client Secret:
 * In the "App registrations" page, select your app.
 * Go to "Certificates & secrets".
@@ -72,6 +47,15 @@ resource "azurerm_resource_group" "RG" {
 * Add a description and choose an expiry date.
 * Click "Add".
 * Copy the "Value" of the client secret (this is the client_secret). Remember to save this somewhere secure, as you won't be able to access it later.
+
+#### Granting the Application access to manage resources in your Azure Subscription
+Once the Application exists in Azure Active Directory - we can grant it permission to modify resources in the Subscription. To do this, 
+* Navigate to the Subscriptions blade within the Azure Portal
+* Select the Subscription you wish to use
+* Click Access Control (IAM)
+* Add > Add role assignment.
+* Specify a Role which grants the appropriate permissions needed for the Service Principal (for example, Contributor will grant Read/Write on all resources in the Subscription).
+* Search for and select the name of the Service Principal created in Azure Active Directory to assign it this role - then press Save.
 
 
 
